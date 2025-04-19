@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { GET_CARS_QUERY } from '../../graphql/mutations';
 import client from '../../../lib/apolloClient';
 import { getUserFromLocalStorage } from '../../utils'; // adjust path
+import { FaUser, FaSignOutAlt } from 'react-icons/fa'; // Import icons
 
 const CarsPage = () => {
     const [page, setPage] = useState(1);
@@ -67,7 +68,7 @@ const CarsList = ({ page, setPage }) => {
                                         window.location.href = '/profile';
                                     }}
                                 >
-                                    Profile
+                                    <FaUser className="inline mr-2" /> Profile
                                 </button>
                                 <button
                                     className="block w-full px-4 py-2 text-left text-red-600 hover:bg-gray-100"
@@ -76,10 +77,11 @@ const CarsList = ({ page, setPage }) => {
                                         window.location.href = '/login';
                                     }}
                                 >
-                                    Logout
+                                    <FaSignOutAlt className="inline mr-2" /> Logout
                                 </button>
                             </div>
                         )}
+
                     </div>
                 )}
             </div>
