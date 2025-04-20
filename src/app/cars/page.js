@@ -155,7 +155,11 @@ const CarsList = ({ page, setPage }) => {
             <div className="fixed bottom-8 right-8">
                 <button
                     className="w-14 h-14 rounded-full bg-blue-500 text-white flex items-center justify-center text-3xl shadow-lg hover:bg-blue-600 focus:outline-none transition-all duration-300"
-                    onClick={() => alert("Add new car")}
+                    onClick={() => {
+                        router.push('/createCar'); // Redirect to the /cars page after login success
+
+                        // window.location.href = '/createCar';
+                    }}
                 >
                     +
                 </button>

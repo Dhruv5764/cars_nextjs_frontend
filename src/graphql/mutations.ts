@@ -33,3 +33,14 @@ export const GET_CARS_QUERY = gql`
 `;
 
 
+export const GET_CURRENT_USER = gql`
+  query {
+    me {
+      id
+      username
+      email
+    }
+  }
+`;
+
+
