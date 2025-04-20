@@ -6,6 +6,7 @@ import { GET_CARS_QUERY } from '../../graphql/mutations';
 import client from '../../../lib/apolloClient';
 import { getUserFromLocalStorage } from '../../utils'; // adjust path
 import { FaUser, FaSignOutAlt } from 'react-icons/fa'; // Import icons
+import { useRouter } from 'next/navigation'; // Use this for Next.js 13's app directory
 
 const CarsPage = () => {
     const [page, setPage] = useState(1);
@@ -17,6 +18,8 @@ const CarsList = ({ page, setPage }) => {
     const start = (page - 1) * limit;
     const [user, setUser] = useState(null);
     const [showDropdown, setShowDropdown] = useState(false);
+    const router = useRouter(); // Initialize the router
+
 
     useEffect(() => {
         const u = getUserFromLocalStorage();
